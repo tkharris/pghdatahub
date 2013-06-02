@@ -1,5 +1,8 @@
 class SearchController < ApplicationController
 
+  def home
+  end
+
   def search
   	query = params[:q]
   	url = "http://ec2-54-226-133-156.compute-1.amazonaws.com:8983/solr/select?q=*:#{CGI.escape(query)}&wt=json"

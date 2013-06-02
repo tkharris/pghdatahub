@@ -41,6 +41,8 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    haml (4.0.0)
+      tilt
     hike (1.2.2)
     httparty (0.11.0)
       multi_json (~> 1.0)
@@ -123,6 +125,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  haml
   httparty
   jquery-rails
   less-rails
