@@ -1,7 +1,7 @@
 class DataSet < ActiveRecord::Base
   attr_accessible :name
 
-  def self.types do
+  def self.types
   	'xls', 'kmz', 'zip', 'txt', 'pdf'
   end
 end

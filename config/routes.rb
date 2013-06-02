@@ -1,4 +1,7 @@
 Pghdatahub::Application.routes.draw do
+  resources :orgs
+
+
   resources :data_sets
 
 
