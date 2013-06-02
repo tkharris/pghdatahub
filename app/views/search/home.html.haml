@@ -1,1 +1,7 @@
-You are home
+#search_header= image_tag('bg-header-home.png')
+.row
+	#search_search_bar.span8.offset1
+		= form_tag "/search.json", :method => "get" do
+			.input-append
+			= text_field_tag :q, 'data', :class => 'input-tklarge'
+			= submit_tag "Search", :class => 'btn-tklarge'

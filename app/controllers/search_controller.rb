@@ -5,7 +5,7 @@ class SearchController < ApplicationController
 
   def search
   	query = params[:q]
-  	url = "http://ec2-54-226-133-156.compute-1.amazonaws.com:8983/solr/select?q=*:#{CGI.escape(query)}&wt=json"
+  	url = "http://ec2-54-226-133-156.compute-1.amazonaws.com:8983/solr/select?q=#{CGI.escape(query)}&wt=json"
   	puts url
   	response = HTTParty.get(url)
 	#puts response.body, response.code, response.message, response.headers.inspect
