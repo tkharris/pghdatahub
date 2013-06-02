@@ -1,20 +1,22 @@
 .row
 	.span5
-		%h2= @item.title
+		%h2= item['doc_title']
 		%h3
 			via
-			%u= @item.department
-		%ul
-			%li
+			%u= item['doc_dept']
+		.row
+			.span5
 				Juristiction:
-				= @item.juristiction
-			%li
+				= item['juris']
+		.row
+			.span5
 				406
 				downloads
-			%li
+		.row
+			.span5
 				Created:
-				= @item.created_date
-			- #Data columns
+				= item['created_date'] || 'Unknown'
+		- #Data columns
 
 	.span2
 		%h2 Download:
@@ -22,3 +24,7 @@
 			-# @dl = @item.send(t)
 			-# if @dl
 				- #link_to(image_tag(t + '.png'), dl)
+		.row
+			.span2
+				%a.dl_link{:href => item['doc_reference']}
+					%i{:class => "icon-download", :style=>'font-size: 4em'}
