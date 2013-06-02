@@ -1,9 +1,18 @@
 Pghdatahub::Application.routes.draw do
   resources :orgs
-
-
   resources :data_sets
-
+  resources :posts
+  resources :profiles, :only => [:dashboard]  
+    
+  devise_for :users, :path_names => {:sign_in => "login", :sign_out => "logout"}, :path => "d"
+  # resources :users
+  
+  namespace :admin do
+    match '/' => 'users#index'
+    resources :users
+  end
+  
+  match '/profiles/dashboard' => 'profiles#dashboard', :as => :user_root
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
