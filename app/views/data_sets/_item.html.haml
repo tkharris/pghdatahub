@@ -1,0 +1,24 @@
+.row
+	.span5
+		%h2= @item.title
+		%h3
+			via
+			%u= @item.department
+		%ul
+			%li
+				Juristiction:
+				= @item.juristiction
+			%li
+				406
+				downloads
+			%li
+				Created:
+				= @item.created_date
+			- #Data columns
+
+	.span2
+		%h2 Download:
+		-# for DataSet.types.each do |t|
+			-# @dl = @item.send(t)
+			-# if @dl
+				- #link_to(image_tag(t + '.png'), dl)

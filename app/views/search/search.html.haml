@@ -1,1 +1,2 @@
 #search_header_inner= image_tag('bg-header-inner.png')
+= render :partial => '/data_sets/item', :collection => @search_result['docs'], :as => :items
